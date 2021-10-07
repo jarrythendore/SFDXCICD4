@@ -21,20 +21,16 @@ jobs:
           version: latest
       
       - run:
-          name: Login to Production
-          command: echo "Setting up Production Connection..."
-      
-      - run:
           name: create keys
           command: mkdir keys
 
-      - run:
-          name: extract keys
-          command: $SFDC_SERVER_KEY | base64 -d > keys/server.key
+      # - run:
+      #     name: extract keys
+      #     command: echo $SFDC_SERVER_KEY | base64 -d > keys/server.key
           
       - run:
           name: "Authenticating..."
-          command: sfdx force:auth:jwt:grant --clientid $SFDC_PROD_CLIENTID --jwtkeyfile keys/server.key --username $SFDC_PROD_USER --setdefaultdevhubusername -a DevHub
+          command: sfdx force:auth:jwt:grant --clientid $SFDC_PROD_CLIENTID --jwtkeyfile $SFDC_SERVER_KEY --username $SFDC_PROD_USER --setdefaultdevhubusername -a DevHub
 
       - run:
           name: "showing org list..."
