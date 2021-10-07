@@ -21,8 +21,8 @@ jobs:
           version: latest
       
       - run:
-            name: get SFDX version
-            command: sfdx -v 
+            name: echo key
+            command: echo $SFDC_SERVER_KEY 
 
 workflows:
   example-workflow:
