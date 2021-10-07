@@ -22,7 +22,7 @@ jobs:
       
       - run:
             name: echo username
-            command: echo $SFDC_PROD_USER
+            command: echo ${SFDC_PROD_USER}
 
 workflows:
   example-workflow:
