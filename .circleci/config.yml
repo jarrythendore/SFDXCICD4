@@ -17,6 +17,10 @@ jobs:
           install-yarn: true 
           lts: true
       - run: node --version 
+      - run:
+          name: extract keys
+          command: $SFDC_SERVER_KEY | base64 -d > keys/server.key
+          
       - salesforce-sfdx/install:
           version: latest
       
@@ -28,9 +32,7 @@ jobs:
           name: create keys
           command: mkdir keys
 
-      - run:
-          name: extract keys
-          command: echo $SFDC_SERVER_KEY | base64 -d > keys/server.key
+      
           
       - run:
           name: "Authenticating..."
