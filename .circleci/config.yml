@@ -21,8 +21,8 @@ jobs:
           version: latest
       
       - run:
-            name: echo key
-            command: echo $SFDC_SERVER_KEY
+            name: echo username
+            command: echo $SFDC_PROD_USER
 
 workflows:
   example-workflow:
