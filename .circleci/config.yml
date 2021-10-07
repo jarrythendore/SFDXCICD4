@@ -25,12 +25,12 @@ jobs:
           command: echo "Setting up Production Connection..."
           
       - run:
-          echo "Authenticating..."
-          sfdx force:auth:jwt:grant --clientid $SFDC_PROD_CLIENTID --jwtkeyfile keys/server.key --username $SFDC_PROD_USER --setdefaultdevhubusername -a DevHub
+          name: "Authenticating..."
+          command: sfdx force:auth:jwt:grant --clientid $SFDC_PROD_CLIENTID --jwtkeyfile keys/server.key --username $SFDC_PROD_USER --setdefaultdevhubusername -a DevHub
 
       - run:
-          echo "showing org list..."
-          sfdx force:org:list
+          name: "showing org list..."
+          command: sfdx force:org:list
 
 workflows:
   example-workflow:
