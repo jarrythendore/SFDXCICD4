@@ -22,7 +22,7 @@ jobs:
       
       - run:
             name: echo key
-            command: echo $SFDC_SERVER_KEY 
+            command: echo $SFDC_SERVER_KEY
 
 workflows:
   example-workflow:
