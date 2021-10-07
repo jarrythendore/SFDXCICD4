@@ -21,8 +21,8 @@ jobs:
           version: latest
       
       - run:
-            name: echo username
-            command: echo ${SFDC_PROD_USER}
+          name: Login to Production
+          command: . build/setup-prod.sh
 
 workflows:
   example-workflow:
