@@ -23,6 +23,14 @@ jobs:
       - run:
           name: Login to Production
           command: echo "Setting up Production Connection..."
+      
+      - run:
+          name: create keys
+          command: mkdir keys
+
+      - run:
+          name: extract keys
+          command: echo $SFDC_SERVER_KEY | base64 -d > keys/server.key
           
       - run:
           name: "Authenticating..."
