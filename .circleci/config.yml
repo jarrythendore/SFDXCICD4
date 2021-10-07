@@ -30,8 +30,8 @@ jobs:
 
       - run:
           echo "showing org list..."
-          command: sfdx force:org:list
-          
+          sfdx force:org:list
+
 workflows:
   example-workflow:
     jobs:
